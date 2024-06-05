@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Link do css-->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sobre | Quero Meu Site</title>
+</head>
+<body>
+        <!--inicio cabeçalho da página-->
+        <header style="background-image: url('img/background-sobre1.jpg')">
+         <!--inicio do container-->
+          <div class="container">
+           <nav>
+            <div class="logo">
+              <a href="index.html">
+                 <img src="img/logo editada.png" alt="logo">
+              </a>
+            </div>
+            <ul class="ul">
+                <a href="index.html">Home</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="contato.html" class="btn">Contato</a>
+                <div class="close-icon" onclick="closeMenu()">
+                  <i class="fa fa-times-circle" aria-hidden="true"></i>
+                </div>
+            </ul>
+            <div class="menu-icon" onclick="openMenu()">
+              <i class="fa fa-bars"></i>
+            </div>
+           </nav>
+           <section class="banner">
+             <div class="banner-text">
+               <h1>Sobre</h1>
+              </div>
+           </section>
+          </div>
+          <!--fim do container-->
+        </header>
+          <!--fim do cabeçalho da página-->
+          
+          <section class="sobre">
+            <div class="container">
+                <div class="sobre-text">
+                    <h3>Estamos nesse mercado a mais de 9 anos</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                         Facilis explicabo ab iusto modi a reprehenderit dolore neque soluta nobis perferendis tempore, cupiditate harum fuga optio. 
+                         Inventore quasi doloremque corporis minima!
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum pariatur fugiat reiciendis distinctio animi, ducimus maiores in excepturi sunt sequi iure tempora voluptate ad autem totam, dolorem ut sint. A.</p>
+                    <a href="contato.html" class="btn animate-btn">Entrar em contato</a>
+                </div>
+                <div class="sobre-img">
+                    <img src="img/sobre.jpg" alt="Sobre">
+                </div>
+            </div>
+          </section>
+
+          <!--Rodapé da pagina-->
+          <footer class="footer">
+            <div class="container">
+              <div class="links">
+                <a href="#">
+                  <i class="fa fa-facebook"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-instagram"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-github"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+                </div>
+                <span id="copyright">
+                  &copy; 2024 Willyans Estevam da Guia, Indianara dos Santos Rodrigues Guia, Jefferson Estevam Amorim
+              </span>
+            </div>
+          </footer>
+        <!--Fim do Rodape-->
+        <script src="js/menu.js"></script>
+</body>
+</html>
