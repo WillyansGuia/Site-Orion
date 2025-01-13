@@ -420,7 +420,7 @@ nav .close-icon{
 
 .contato-info .rigth-side input{
     display: block;
-    width: 100;
+    width: 100%;
     margin-bottom: 10px;
     height: 47px;
     padding: 15px;
