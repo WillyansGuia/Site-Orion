@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Link do css-->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Quero Meu Site</title>
+</head>
+<body>
+        <!--inicio cabeçalho da página-->
+        <header style="background-image: url('img/abstract-computing-network-concept.jpg')">
+         <!--inicio do container-->
+          <div class="container">
+           <nav>
+            <div class="logo">
+              <a href="index.html">
+                 <img src="img/Imagem do WhatsApp de 2024-06-05 à(s) 10.34.43_b594e81d.jpg" alt="logo">
+              </a>
+            </div>
+            <ul class="ul">
+                <a href="index.html">Home</a>
+                <a href="#perfil">Perfil</a>
+                <div class="close-icon" onclick="closeMenu()">
+                  <i class="fa fa-times-circle" aria-hidden="true"></i>
+                </div>
+            </ul>
+            <div class="menu-icon" onclick="openMenu()">
+              <i class="fa fa-bars"></i>
+            </div>
+            <div class="dropdown">
+              <a href="#" class="btn">Histórico</a>
+          <div class="dropdown-content">
+           <ul id="historico-lista"></ul>
+          </div>
+           </nav>
+           <section class="banner">
+             <div class="banner-text">
+               <h1>Orion Automação & Sistema </h1>
+               <p>Melhor para a sua segurança é aqu</p>
+               <a href="contato.html" class="btn animate-btn">Entrar em Contato</a>
+              </div>
+           </section>
+          </div>
+          <!--fim do container-->
+        </header>
+          <!--fim do cabeçalho da página-->
+          <!--faca mais-->
+          <section class="faca-mais">
+            <!--container-->
+            <div class="container">
+              <div class="faca-mais-text">
+                <h3>Agendar Serviço</h3>
+                <!-- Agendar Serviço -->
+        <div id="servicos" class="card">
+          <label for="servico">Escolha o Serviço:</label>
+          <select id="servico">
+              <option value="Instalação de rede">Instalação de Rede</option>
+              <option value="Sistemas de Segurança">Sistemas de Segurança</option>
+              <option value="Soluções em Informatica">Soluções em Informatica</option>
+              <option value="Automação Residencial">Automação Residencial</option>
+              <option value="Instalação e Manutenção Elétrica">Instalação e Manutenção Elétrica</option>
+          </select>
+          <label for="data">Data:</label>
+          <input type="date" id="data">
+          <label for="Horario">Horario:</label>
+          <select>
+            <option value="Manhã">Manhã</option>
+            <option value="Tarde">Tarde</option>
+          </select>
+          <button onclick="agendarServico()">Agendar</button>
+      </div>
+
+                  </div>
+              <div class="faca-mais-img">
+                <img src="img/img-1.png"alt="imagrm">
+              </div>
+            </div>
+            <!--fim do container-->
+          </section>
+          <!--fim do faca mais-->
+
+             <!--faca mais-->
+          <section class="faca-mais">
+            <!--container-->
+            <div class="container">
+              <div class="faca-mais-text">
+                <h3>Faça mais com Orion</h3>
+                <p>
+                  Soluções em informatica, instalação de redes de internet, sistemas de segurança,
+                   automação residencial( automatizador de portão, interfones, alarmes, cameras de segurança), instalação e manutenção elétrica residencial e predial</p>
+                <a href="contato.html" class="btn animate-btn">Entre em contato</a>
+                  </div>
+              <div class="faca-mais-img">
+                <img src="img/security.png"alt="imagrm">
+              </div>
+            </div>
+            <!--fim do container-->
+          </section>
+          <!--fim do faca mais-->
+
+          <!--Rodapé da pagina-->
+          <footer class="footer">
+            <div class="container">
+              <div class="links">
+                <a href="#">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                 </a>
+                  <a href="#">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                </div>
+                <span id="copyright">
+                  &copy; 2024 Willyans Estevam da Guia & Indianara dos Santos Rodrigues Guia
+              </span>
+            </div>
+          </footer>
+        <!--Fim do Rodape-->
+        <script src="js/menu.js"></script>
+        <script>
+          const historico = [];
+  
+          function agendarServico() {
+              const servico = document.getElementById('servico').value;
+              const data = document.getElementById('data').value;
+              if (servico && data) {
+                  historico.push(`Serviço: ${servico}, Data: ${data}`);
+                  atualizarHistorico();
+                  alert('Serviço agendado com sucesso!');
+              } else {
+                  alert('Por favor, preencha todos os campos.');
+              }
+          }
+  
+          function comprarProduto(produto, preco) {
+              historico.push(`Produto: ${produto}, Preço: R$ ${preco}`);
+              atualizarHistorico();
+              alert(`${produto} comprado com sucesso!`);
+          }
+  
+          function enviarMensagem() {
+              const mensagem = document.getElementById('mensagem').value;
+              if (mensagem) {
+                  historico.push(`Mensagem enviada: ${mensagem}`);
+                  atualizarHistorico();
+                  alert('Mensagem enviada com sucesso!');
+              } else {
+                  alert('Por favor, escreva uma mensagem.');
+              }
+          }
+  
+          function atualizarHistorico() {
+              const historicoLista = document.getElementById('historico-lista');
+              historicoLista.innerHTML = '';
+              historico.forEach(item => {
+                  const li = document.createElement('li');
+                  li.textContent = item;
+                  historicoLista.appendChild(li);
+              });
+          }
+      </script>
+</body>
+</html>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+  padding: 0.5rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+nav a:hover {
+  background-color: #575757;
+  border-radius: 5px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.card h3 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+.card input, .card select, .card textarea, .card button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.card button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+.card button:hover {
+  background-color: #45a049;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+}
+.product {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.product img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+</style>
