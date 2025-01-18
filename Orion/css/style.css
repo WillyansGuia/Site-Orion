@@ -14,6 +14,7 @@ body{
     font-family:  "Poppins";
     background-color: #f1f6fc31;
     color:black;
+    background: url(img/abstract-computing-network-concept.jpg);
 }
 
 section,
@@ -22,8 +23,6 @@ footer{
     display: flex;
     justify-items: center;
     align-items: center;
-    background: url(img/abstract-computing-network-concept.jpg);
-    animation: animateBg 5s linear infinite;
 }
 
 @keyframes animateBg {
@@ -479,9 +478,9 @@ nav .close-icon{
             clip-path: circle(0% at 100% 0);
             transition: 0.7s;
         }
-        .ul .open{
+        .ul.open{
             clip-path: circle(139.2% at 99% 1%);
-        }
+        }   
         .ul a{
             margin: 10px 0;
             font-size: 16px;
@@ -495,6 +494,16 @@ nav .close-icon{
             position: absolute;
             top:46px;
             right: 28px;
+        }
+
+        .logo {
+            img {
+                width: 100px;
+                height: 100px;
+                object-fit: contain;
+                color: transparent;
+                display: flex;
+              }
         }
     /*Pagina home responsivel*/
     .faca-mais .faca-mais-texxt{

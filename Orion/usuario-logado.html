@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Quero Meu Site</title>
 </head>
-<body>
+<body style="background-image: url('img/abstract-computing-network-concept.jpg')">
         <!--inicio cabeçalho da página-->
-        <header style="background-image: url('img/abstract-computing-network-concept.jpg')">
+        <header>
          <!--inicio do container-->
           <div class="container">
            <nav>
@@ -32,9 +32,9 @@
             </div>
             <div class="dropdown">
               <a href="#" class="btn">Histórico</a>
-          <div class="dropdown-content">
-           <ul id="historico-lista"></ul>
-          </div>
+            <div class="dropdown-content">
+            <ul id="historico-lista"></ul>
+            </div>
            </nav>
            <section class="banner">
              <div class="banner-text">
@@ -47,8 +47,7 @@
           <!--fim do container-->
         </header>
           <!--fim do cabeçalho da página-->
-          <!--faca mais-->
-          <section class="faca-mais">
+
             <!--container-->
             <div class="container">
               <div class="faca-mais-text">
@@ -71,35 +70,8 @@
             <option value="Tarde">Tarde</option>
           </select>
           <button onclick="agendarServico()">Agendar</button>
-      </div>
-
-                  </div>
-              <div class="faca-mais-img">
-                <img src="img/img-1.png"alt="imagrm">
-              </div>
-            </div>
+        </div>
             <!--fim do container-->
-          </section>
-          <!--fim do faca mais-->
-
-             <!--faca mais-->
-          <section class="faca-mais">
-            <!--container-->
-            <div class="container">
-              <div class="faca-mais-text">
-                <h3>Faça mais com Orion</h3>
-                <p>
-                  Soluções em informatica, instalação de redes de internet, sistemas de segurança,
-                   automação residencial( automatizador de portão, interfones, alarmes, cameras de segurança), instalação e manutenção elétrica residencial e predial</p>
-                <a href="contato.html" class="btn animate-btn">Entre em contato</a>
-                  </div>
-              <div class="faca-mais-img">
-                <img src="img/security.png"alt="imagrm">
-              </div>
-            </div>
-            <!--fim do container-->
-          </section>
-          <!--fim do faca mais-->
 
           <!--Rodapé da pagina-->
           <footer class="footer">
@@ -176,15 +148,25 @@ body {
   padding: 0;
 }
 header {
-  background-color: #4CAF50;
   color: white;
   padding: 1rem;
   text-align: center;
+  justify-content: space-between;
+}
+
+.logo {
+    img {
+        width: 150px;
+        height: 100px;
+        object-fit: contain;
+        color: transparent;
+        display: flex;
+      }
 }
 nav {
   display: flex;
-  justify-content: space-around;
-  background-color: #333;
+  justify-content: space-between;
+  background-color: transparent;
   padding: 0.5rem;
 }
 nav a {
@@ -203,17 +185,19 @@ nav a:hover {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, .5);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   z-index: 1;
+  border-radius: 20px;
 }
 .dropdown:hover .dropdown-content {
   display: block;
 }
 main {
   display: flex;
-  flex-direction: column;
+  flex-direction: center;
   align-items: center;
   padding: 1rem;
 }
@@ -224,6 +208,8 @@ main {
   padding: 1rem;
   width: 300px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
 }
 .card h3 {
   margin: 0;
@@ -263,5 +249,48 @@ main {
   max-width: 150px;
   height: auto;
   margin-bottom: 0.5rem;
+}
+@media(max-width:830px){
+        /* Menu mobile*/
+       .ul{
+            position: fixed;
+            top:0;
+            left: 0;
+            background:#184b88;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            clip-path: circle(0% at 100% 0);
+            transition: 0.7s;
+        }
+        .ul a{
+            margin: 10px 0;
+            font-size: 16px;
+        }
+         nav .menu-icon{
+            display: block;
+        }
+
+        nav .close-icon{
+            display:block;
+            position: absolute;
+            top:46px;
+            right: 28px;
+        }
+      }
+
+.footer i{
+    color:white;
+    font-size: 19px;
+    background-color:#4f9cf9;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 10px;
+}
+
+.footer p{
+    margin-top: 10px;
+    color:white;
 }
 </style>
