@@ -3,105 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--font awesome-->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!--Link do css-->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <title>Quero Meu Site</title>
+    <title>Cadastro</title>
 </head>
 <body style="background-image: url('img/abstract-computing-network-concept.jpg')">
-        <!--inicio cabeçalho da página-->
-        <header>
-          <nav>
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
             <div class="logo">
-              <a href="index.html">
-                 <img src="img/logo editada.png" alt="logo">
-              </a>
+                <a href="index.html">
+                   <img src="img/logo editada.png" alt="logo">
+                </a>
             </div>
             <ul class="ul">
-              <a href="index.html">Home</a>
-              <a href="contato.html">Contato</a>
-              <div class="close-icon" onclick="closeMenu()">
-                <i class="fa fa-times-circle" aria-hidden="true"></i>
-              </div>
+                <a href="index.html">Home</a>
+                <a href="contato.html">Contato</a>
+                <div class="close-icon" onclick="closeMenu()">
+                    <i class="fa fa-times-circle" aria-hidden="true"></i>
+                </div>
             </ul>
             <div class="menu-icon" onclick="openMenu()">
-              <i class="fa fa-bars"></i>
+                <i class="fa fa-bars"></i>
             </div>
-          </nav>
-        </header> 
-          <!--inicio do container-->
-           <section class="banner">
-            <div class="login-box">
-              <form action="">
-                  <h2>Cadastro</h2>
-                  <div class="input-box">
-                    <span class="icon"><ion-icon name="person-outline"></ion-icon></ion-icon></span>
-                    <input type="Name" required>
-                    <label>Nome Completo</label>
-                  </div>
-                  <div class="input-box">
+        </nav>
+    </header> 
+
+    <!-- Formulário de Cadastro -->
+    <section class="banner">
+        <div class="login-box">
+            <form>
+                <h2>Cadastro</h2>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input type="text" id="nome" required>
+                    <label id="labelNome">Nome Completo</label>
+                </div>
+                <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" required>
-                    <label>Email</label>
-                  </div>
-                  <div class="input-box">
-                    <span class="icon"><ion-icon name="location-outline"></ion-icon></ion-icon></span>
-                    <input type="address" required>
-                    <label>Endereço</label>
-                  </div>
-                  <div class="input-box">
-                    <span class="icon"><ion-icon name="location-outline"></ion-icon></ion-icon></span>
-                    <input type="post code" required>
-                    <label>CEP</label>
-                  </div>
-                  <div class="input-box">
+                    <input type="email" id="email" required>
+                    <label id="labelEmail">Email</label>
+                </div>
+                <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required>
-                    <label>senha</label>
-                  </div>
-                  <div class="input-box">
+                    <input type="password" id="senha" required>
+                    <label id="labelSenha">Senha</label>
+                </div>
+                <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required>
-                    <label>Confirmar senha</label>
-                  </div>
-                  <button type="submit">Criar Conta</button>
-           </section>
-          </div>
-        
-          
-          <!--fim do container-->
-        
-          <!--fim do cabeçalho da página-->
+                    <input type="password" id="confirmSenha" required>
+                    <label id="labelConfirmSenha">Confirmar Senha</label>
+                </div>
+                <div id="msgError" style="color: red; display: none;"></div>
+                <div id="msgSuccess" style="color: green; display: none;"></div>
+                <button type="button" onclick="cadastrar()">Criar Conta</button>
+            </form>
+        </div>
+    </section>
 
-
-
-          <!--Rodapé da pagina-->
-          <footer class="footer">
-            <div class="container">
-              <div class="links">
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="links">
                 <a href="#">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
                 </a>
                 <a href="#">
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
                 </a>
                 <a href="#">
-                  <i class="fa fa-github" aria-hidden="true"></i>
-                 </a>
-                  <a href="#">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="#">
                     <i class="fa fa-linkedin" aria-hidden="true"></i>
                 </a>
-                </div>
-                <span id="copyright">
-                  &copy; 2024 Willyans Estevam da Guia & Indianara dos Santos Rodrigues Guia
-              </span>
             </div>
-          </footer>
-        <!--Fim do Rodape-->
-        <script src="js/menu.js"></script>
-        <script src="js/cadastro.js"></script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+            <span id="copyright">
+                &copy; 2024 Willyans Estevam da Guia & Indianara dos Santos Rodrigues Guia
+            </span>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="js/cadastro.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
