@@ -95,7 +95,7 @@ function cadastrar() {
     }, 3000);
   } else {
     msgError.setAttribute('style', 'display: block');
-    msgError.innerHTML = '<strong>Preencha todos os campos corretamente antes de cadastrar</strong>';
+    msgError.innerHTML = '<strong>Preencha todos os campos corretamente</strong>';
     msgSuccess.setAttribute('style', 'display: none');
     msgSuccess.innerHTML = '';
   }
