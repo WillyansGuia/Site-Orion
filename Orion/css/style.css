@@ -178,86 +178,7 @@ nav .close-icon{
     width: 100%;
 }
 
-/* Depoimentos*/
 
-.depoimentos h3{
-    text-align: center;
-}
-
-.depoimentos p{
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.depoimentos .cards-item{
-    background-color: #d3e6fd;
-    margin: 15px;
-    border-radius: 14px;
-    text-align: center;
-    width: 350px;
-    transition: 0.3s;
-}
-
-.depoimentos .cards-item img{
-    border-radius: 100%;
-    width: 80px;
-    display: block;
-    margin: 10px auto;
-}
-
-.depoimentos .cards-item .nome-user{
-    font-weight: 600;
-    font-size: 20px;
-    margin-bottom: 15px;
-    transition: 0.3s;
-}
-
-.depoimentos .cards-item .depoimento-user{
-    font-size: 15px;
-    padding: 0 15px;
-    transition: 0.3s;
-}
-
-.depoimentos .cards-item .estrelas{
-    margin:15px 0;
-    border-top: 2px solid #71767a23;
-    transition: 0.3s;
-}
-
-.depoimentos .cards-item .estrelas i{
-    color: #4f9cf9;
-    margin-top: 15px;
-    font-size: 20px;
-}
-
-.depoimentos .cards-item:hover{
-    background-color: #4f9cf9;
-    margin-top: -5px;
-}
-
-.depoimentos .cards-item:hover .nome-user,
-.depoimentos .cards-item:hover .depoimento-user,
-.depoimentos .cards-item:hover .estrelas i {
-    color:white;
-}
-
-/* Clientes*/
-.clientes h3,
-.clientes p {
-    text-align: center;
-}
-
-.clientes .container div {
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
 /* Footer*/
 .footer{
@@ -279,81 +200,6 @@ nav .close-icon{
     color:white;
 }
 
-/*Pagina sobre*/
-.sobre .container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.sobre .sobre-text{
-    width: 50%;
-    padding: 40px;
-}
-
-.sobre .sobre-text p{
-    margin: 18px 0;
-    color:#000000a6;
-}
-
-.sobre .sobre-img{
-    width: 50%;
-}
-
-.sobre .sobre-img img{
-    width: 100%;
-    border-radius: 10px;
-}
-/*Fim da Pagina sobre*/
-
-/*Pagina serviço*/
-.servicos h3{
-    text-align: center;
-}
-
-.servicos .container > p{
-    text-align: center;
-}
-
-.servicos .rows-cards{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    flex-wrap:wrap;
-}
-
-.servicos .row-card-item{
-    background-color: #d3e6fd;
-    width: 350px;
-    padding: 20px;
-    border-radius: 14px;
-    margin: 20px;
-    transition: 0.3s;
-}
-
-.servicos .row-card-item:hover{
-    background-color: #4f9cf9;
-}
-
-.servicos .row-card-item:hover p{
-    color:white;
-}
-
-.servicos .row-card-item p.nome-servico{
-    margin: 5px 0;
-    transition: 0.3s;
-}
-
-.servicos .row-card-item p.descricao-servico{
-    transition: 0.3s;
-}
-
-.servicos .row-card-item img{
-    background-color: #4f9cf9;
-    border-radius: 14px;
-    width: 70px;
-    padding: 9px;
-}
 
 /*Dados*/
 .dados{
@@ -705,77 +551,164 @@ button {
 
 
 /* Ajustes para a seção de Agendar Serviço */
-.faca-mais-text {
+.usuário-logado {
+    .faca-mais-text {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      
+      .usuário-logado .faca-mais-text h3 {
+        font-size: 24px;
+        margin-bottom: 1rem;
+        color: #333;
+      }
+      
+      #servicos {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 1.5rem;
+        max-width: 400px;
+        margin: 0 auto; /* Centraliza o card */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        background-color: #f9f9f9;
+      }
+      
+      #servicos label {
+        display: block;
+        font-size: 160%;
+        margin-bottom: 0.5rem;
+        color: #555;
+        text-align: left;
+      }
+      
+      #servicos input[type="date"],
+      #servicos select {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      
+      #servicos button {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 16px;
+        color: white;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      #servicos button:hover {
+        background-color: #45a049;
+      }
+      
+    
+      /* Estilizando o select */
+    #servico, #horario {
+        font-size: 16px; /* Tamanho da fonte do select */
+        padding: 8px;
+        border-radius: 4px;
+        /* border: 1px solid #ccc; */
+        color: white;
+      }
+      
+      /* Estilizando as opções dentro do select */
+      #servico option, #horario option {
+        font-size: 14px; /* Tamanho da fonte das opções */
+        padding: 8px;
+      }
+      
+    
+      #pcadastro {
+        color: white;
+      }
+    
+      .input-box-agendamento {
+        position: relative;
+        width: 310px;
+        margin: 30px 0;
+        border-bottom: 2px solid #fff;
+    }
+    
+    .input-box-agendamento label {
+        position: absolute;
+        top: -15px;
+        left: 25px;
+        font-size: 0.8em;
+        color: #fff;
+        pointer-events: none;
+        z-index: 2;
+        background: rgba(0,0,0,0.3);
+        padding: 0 5px;
+    }
+    
+    .input-box-agendamento select,
+    .input-box-agendamento input {
+        width: 100%;
+        height: 50px;
+        background: transparent !important;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        color: #fff;
+        padding: 0 35px 0 25px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    
+    .input-box-agendamento select::-ms-expand {
+        display: none;
+    }
+    
+    .input-box-agendamento .icon {
+        position: absolute;
+        right: 8px;
+        color: #fff;
+        font-size: 1.2em;
+        line-height: 57px;
+        z-index: 1;
+    }
+}
+
+.peofile-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
     text-align: center;
-    margin: 2rem 0;
-  }
-  
-  .faca-mais-text h3 {
-    font-size: 24px;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  #servicos {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 1.5rem;
-    max-width: 400px;
-    margin: 0 auto; /* Centraliza o card */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    background-color: #f9f9f9;
-  }
-  
-  #servicos label {
-    display: block;
-    font-size: 160%;
-    margin-bottom: 0.5rem;
-    color: #555;
-    text-align: left;
-  }
-  
-  #servicos input[type="date"],
-  #servicos select {
+}
+.profile-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.profile-container h2 {
+    margin-bottom: 10px;
+}
+.profile-container p {
+    color: #666;
+    margin: 5px 0;
+}
+.profile-container button {
+    margin-top: 15px;
+    padding: 10px;
     width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  #servicos button {
-    width: 100%;
-    padding: 0.75rem;
-    font-size: 16px;
-    color: white;
-    background-color: #4CAF50;
+    background-color: #007bff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  #servicos button:hover {
-    background-color: #45a049;
-  }
-  
-
-  /* Estilizando o select */
-#servico, #horario {
-    font-size: 16px; /* Tamanho da fonte do select */
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
-  /* Estilizando as opções dentro do select */
-  #servico option, #horario option {
-    font-size: 14px; /* Tamanho da fonte das opções */
-    padding: 8px;
-  }
-  
-
-  #pcadastro {
     color: white;
-  }
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.profile-container button:hover {
+    background-color: #0056b3;
+}  
+
