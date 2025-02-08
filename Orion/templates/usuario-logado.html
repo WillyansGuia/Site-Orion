@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" 
+          integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Usuário Logado</title>
+</head>
+<body style="background-image: url('../static/img/abstract-computing-network-concept.jpg')">
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="../static/img/logo editada.png" alt="logo">
+                </a>
+            </div>
+            <ul class="ul">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="#perfil">Perfil</a>
+                <div class="dropdown">
+                    <a href="#" class="btn">Histórico</a>
+                    <div class="dropdown-content">
+                        <div class="close-icon" onclick="closeMenu()">
+                            <i class="fa fa-times-circle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+            <div class="menu-icon" onclick="openMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Formulário de Agendamento (Mesma estrutura do cadastro) -->
+    <section class="banner">
+      <div class="login-box">
+        <form>
+            <h2>Agendar Serviço</h2>
+            
+            <!-- Campo de Serviço -->
+            <div class="input-box-agendamento">
+                    <span class="icon"><ion-icon name="list"></ion-icon></span>
+                    <select id="servico" required>
+                        <option value="" disabled selected hidden></option>
+                        <option value="Instalação de rede">Instalação de Rede</option>
+                        <option value="Sistemas de Segurança">Sistemas de Segurança</option>
+                        <option value="Soluções em Informatica">Soluções em Informática</option>
+                        <option value="Automação Residencial">Automação Residencial</option>
+                        <option value="Instalação e Manutenção Elétrica">Instalação Elétrica</option>
+                    </select>
+                    <label>Escolha o Serviço</label>
+                </div>
+
+                <!-- Campo de Data -->
+                 <div class="input-box-agendamento">
+                    <span class="icon"><ion-icon name="calendar"></ion-icon></span>
+                    <input type="date" id="data" required>
+                    <label>Selecione a Data</label>
+                </div>
+
+                <!-- Campo de Horário -->
+                 <div class="input-box-agendamento">
+                    <span class="icon"><ion-icon name="time"></ion-icon></span>
+                    <select id="horario" required>
+                        <option value="" disabled selected hidden></option>
+                        <option value="Manhã">Manhã</option>
+                        <option value="Tarde">Tarde</option>
+                    </select>
+                    <label>Escolha o Horário</label>
+                </div>
+
+                <button type="button" onclick="agendarServico()">Confirmar Agendamento</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="links">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <span id="copyright">
+                &copy; 2024 Willyans Estevam da Guia & Indianara dos Santos Rodrigues Guia
+            </span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../static/js/menu.js"></script>
+    <script src="../static/js/logado.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

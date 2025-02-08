@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Link do css-->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Serviços | Quero Meu Site</title>
+</head>
+<body>
+        <!--inicio cabeçalho da página-->
+        <header style="background-image: url('../static/img/background-servicos.jpg')">
+         <!--inicio do container-->
+          <div class="container">
+           <nav>
+            <div class="logo">
+              <a href="{{ url_for('index') }}">
+                 <img src="../static/img/logo editada.png" alt="logo">
+              </a>
+            </div>
+            <ul class="ul">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="../templates/sobre.html">Sobre</a>
+                <a href="{{ url_for('servicos') }}">Serviços</a>
+                <a href="{{ url_for('contato') }}">Contato</a>   
+                <a href="{{ url_for('cadastro') }}">Cadastro</a>
+                <a href="{{ url_for('login') }}" class="btn">Login</a>                
+                <div class="close-icon" onclick="closeMenu()">
+                  <i class="fa fa-times-circle" aria-hidden="true"></i>
+                </div>
+            </ul>
+            <div class="menu-icon" onclick="openMenu()">
+              <i class="fa fa-bars"></i>
+            </div>
+           </nav>
+           <section class="banner">
+             <div class="banner-text">
+               <h1>Serviços</h1>
+              </div>
+           </section>
+          </div>
+          <!--fim do container-->
+        </header>
+          <!--fim do cabeçalho da página-->
+          
+          <!--seção serviço-->
+          <section class="servicos">
+            <div class="container">
+                <h3>Nossos Serviços</h3>
+                <p>Conheça os nossos melhores serviços que temos para você!</p>
+               <!--rows cards-->
+                <div class="rows-cards">
+                    <!-- row-card-item 1-->
+                    <div class="row-card-item">
+                      <img src="../static/img/cloud.png" alt="nuvem">
+                      <p class="nome-servico"><strong>Serviços em nuvens</strong></p>
+                      <p class="descrição-serviço">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut laborum repudiandae animi earum architecto molestias, blanditiis quo deleniti obcaecati deserunt labore, ipsum nulla voluptatum dolore. Obcaecati eligendi quidem eum omnis?
+                      </p>
+                    </div>
+                <!--fim do row card item 1-->
+                <!-- row-card-item 2-->
+                    <div class="row-card-item">
+                      <img src="../static/img/digital-marketing.png" alt="Marketing">
+                      <p class="nome-servico"><strong>Marketing Digital</strong></p>
+                      <p class="descrição-serviço">
+                       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut laborum repudiandae animi earum architecto molestias, blanditiis quo deleniti obcaecati deserunt labore, ipsum nulla voluptatum dolore. Obcaecati eligendi quidem eum omnis?
+                      </p>
+                    </div>
+                <!--fim do row card item 2-->
+                 <!-- row-card-item 3-->
+                 <div class="row-card-item">
+                    <img src="../static/img/seo.png" alt="nuvem">
+                    <p class="nome-servico"><strong>SEO</strong></p>
+                    <p class="descrição-serviço">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut laborum repudiandae animi earum architecto molestias, blanditiis quo deleniti obcaecati deserunt labore, ipsum nulla voluptatum dolore. Obcaecati eligendi quidem eum omnis?
+                    </p>
+                  </div>
+                 <!--fim do row card 3-->
+                 <!-- row-card-item 4-->
+                 <div class="row-card-item">
+                    <img src="../static/img/virtual_store.png" alt="nuvem">
+                    <p class="nome-servico"><strong>Criação de Lojas</strong></p>
+                    <p class="descrição-serviço">
+                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut laborum repudiandae animi earum architecto molestias, blanditiis quo deleniti obcaecati deserunt labore, ipsum nulla voluptatum dolore. Obcaecati eligendi quidem eum omnis?
+                  </p>
+                 </div>
+                 <!--fim do row card 4-->
+                 <!-- row-card-item 5-->
+                 <div class="row-card-item">
+                    <img src="../static/img/layer.png" alt="nuvem">
+                    <p class="nome-servico"><strong>Identidade visual & desing</strong></p>
+                    <p class="descrição-serviço">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut laborum repudiandae animi earum architecto molestias, blanditiis quo deleniti obcaecati deserunt labore, ipsum nulla voluptatum dolore. Obcaecati eligendi quidem eum omnis?
+                    </p>
+                 </div>
+                 <!--fim do row card 5-->
+                 <!-- row-card-item 6-->
+                 <div class="row-card-item">
+                    <img src="../static/img/manager.png" alt="nuvem">
+                    <p class="nome-servico"><strong>Criação de conteudo</strong></p>
+                    <p class="descrição-serviço">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut laborum repudiandae animi earum architecto molestias, blanditiis quo deleniti obcaecati deserunt labore, ipsum nulla voluptatum dolore. Obcaecati eligendi quidem eum omnis?
+                    </p>
+                    </div>
+                 <!--fim do row card 6-->
+                </div>
+                <!--fim do rows cards-->
+            </div>
+           
+          </section>
+          <!--fim da seção serviço-->
+
+          <section class="dados">
+            <div class="container">
+                <!--dados item-->
+               <div class="dados-item">
+                <img src="../static/img/cloud.png" alt="">
+                <p>
+                    <strong>2010</strong> <br>
+                    Projetos concluídos
+                </p>
+               </div>
+               <!--fim dados item-->
+                 <!--dados item-->
+                 <div class="dados-item">
+                    <img src="../static/img/cloud.png" alt="">
+                    <p>
+                        <strong>2010</strong> <br>
+                        Projetos concluídos
+                    </p>
+                   </div>
+                   <!--fim dados item-->
+                     <!--dados item-->
+               <div class="dados-item">
+                <img src="../static/img/cloud.png" alt="">
+                <p>
+                    <strong>2010</strong> <br>
+                    Projetos concluídos
+                </p>
+               </div>
+               <!--fim dados item-->
+                 <!--dados item-->
+                 <div class="dados-item">
+                    <img src="../static/img/cloud.png" alt="">
+                    <p>
+                        <strong>2010</strong> <br>
+                        Projetos concluídos
+                    </p>
+                   </div>
+                   <!--fim dados item-->
+            </div>
+          </section>
+
+          <!--Rodapé da pagina-->
+          <footer class="footer">
+            <div class="container">
+              <div class="links">
+                <a href="#">
+                  <i class="fa fa-facebook"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-instagram"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-github"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-linkedin"></i>
+                 </a>
+                </div>
+                <p>desenvolvidos por Turminha PD</p>
+            </div>
+          </footer>
+        <!--Fim do Rodape-->
+        <script src="../static/js/menu.js"></script>
+</body>
+</html>
