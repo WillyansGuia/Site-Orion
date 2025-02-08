@@ -26,8 +26,9 @@
             </div>
             <ul class="ul">
                 <a href="{{ url_for('index') }}">Home</a>
-                <a href="#perfil">Perfil</a>
+                <a href="{{ url_for('perfil') }}">Perfil</a>
                 <a href="{{ url_for('historico') }}">Histórico</a>
+                <a href="{{ url_for('usuario_logado') }}" class="btn">Agendamento</a>
             </ul>
             <div class="menu-icon" onclick="openMenu()">
                 <i class="fa fa-bars"></i>

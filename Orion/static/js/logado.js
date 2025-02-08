@@ -66,3 +66,42 @@ async function agendarServico() {
       });
     }
   }
+
+  // Função para fazer logout
+function fazerLogout() {
+  fetch('/api/logout', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.message === 'Logout realizado com sucesso') {
+        window.location.href = '/login'; 
+      } else {
+          Swal.fire({
+              title: 'Erro!',
+              text: data.error || 'Erro ao fazer logout',
+              icon: 'error',
+              confirmButtonText: 'Ok',
+              confirmButtonColor: '#3085d6'
+          });
+      }
+  })
+  .catch(error => {
+      Swal.fire({
+          title: 'Erro!',
+          text: error.message || 'Erro ao fazer logout',
+          icon: 'error',
+          confirmButtonText: 'Ok',
+          confirmButtonColor: '#3085d6'
+      });
+  });
+}
+
+// Adiciona o evento de clique ao botão de logout
+document.getElementById('btn-logout').addEventListener('click', function(event) {
+  event.preventDefault(); // Impede o comportamento padrão do link
+  fazerLogout(); // Chama a função de logout
+});

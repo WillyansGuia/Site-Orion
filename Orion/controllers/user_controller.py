@@ -2,7 +2,6 @@ from flask import jsonify, request, session
 from models.user import User
 from config.database import db
 
-
 class UserController:
     @staticmethod
     def create_user():
@@ -61,5 +60,26 @@ class UserController:
                 return jsonify({
                     'message': 'Email ou senha inválidos'
                 }), 401
+        except Exception as e:
+            return jsonify({'error': str(e)}), 500
+
+    @staticmethod
+    def get_user_profile():
+        try:
+            # Verifica se o usuário está logado
+            if 'user_id' not in session:
+                return jsonify({'error': 'Usuário não autenticado'}), 401
+    
+            # Busca o usuário no banco de dados
+            user = User.query.get(session['user_id'])
+    
+            if not user:
+                return jsonify({'error': 'Usuário não encontrado'}), 404
+    
+            # Retorna as informações do usuário
+            return jsonify({
+                'user': user.to_dict()
+            }), 200
+    
         except Exception as e:
             return jsonify({'error': str(e)}), 500

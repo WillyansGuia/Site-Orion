@@ -110,7 +110,7 @@ bairro.addEventListener('keyup', () => {
 
 // Validação da Rua
 rua.addEventListener('keyup', () => {
-  if (rua.value.length <= 2) {
+  if (rua.value.length < 1) {
     labelRua.setAttribute('style', 'color: red');
     labelRua.innerHTML = 'Rua *Insira no mínimo 3 caracteres';
     rua.setAttribute('style', 'border-color: red');
@@ -124,7 +124,7 @@ rua.addEventListener('keyup', () => {
 });
 
 // Validação do Numero
-rua.addEventListener('keyup', () => {
+numero.addEventListener('keyup', () => {
   if (numero.value.length <= 2) {
     labelNumero.setAttribute('style', 'color: red');
     labelNumero.innerHTML = 'Numero *Insira no mínimo 3 caracteres';

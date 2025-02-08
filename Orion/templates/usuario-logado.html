@@ -23,15 +23,17 @@
             </div>
             <ul class="ul">
                 <a href="{{ url_for('index') }}">Home</a>
-                <a href="#perfil">Perfil</a>
+                <a href="{{ url_for('perfil') }}">Perfil</a>
                 <div class="dropdown">
-                    <a href="{{ url_for('historico') }}" class="btn">Histórico</a>
+                    <a href="{{ url_for('historico') }}">Histórico</a>
+
                     <div class="dropdown-content">
                         <div class="close-icon" onclick="closeMenu()">
                             <i class="fa fa-times-circle" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
+                <a href="{{ url_for('login') }}" id="btn-logout" class="btn">Logout</a>
             </ul>
             <div class="menu-icon" onclick="openMenu()">
                 <i class="fa fa-bars"></i>
