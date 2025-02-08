@@ -3,6 +3,7 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 from config.database import init_db, db
 from controllers.user_controller import UserController
+from controllers.agendamento_controller import AgendamentoController
 from functools import wraps
 
 app = Flask(__name__)
@@ -45,6 +46,9 @@ def contato():
 def servicos():
     return render_template('servicos.html')
 
+@app.route('/historico')
+def historico():
+    return render_template('historico.html')
 
 @app.route('/api/users', methods=['POST'])
 def create_user():
@@ -54,6 +58,21 @@ def create_user():
 def api_login():
     return UserController.login()
 
+@app.route('/api/agendamentos', methods=['POST'])
+def agendar_servico():
+    return AgendamentoController.agendar_servico()
+
+@app.route('/api/agendamentos', methods=['GET'])
+def listar_agendamentos():
+    return AgendamentoController.listar_agendamentos()
+
+@app.route('/api/agendamentos/<int:agendamento_id>', methods=['PUT'])
+def editar_agendamento(agendamento_id):
+    return AgendamentoController.editar_agendamento(agendamento_id)
+
+@app.route('/api/agendamentos/<int:agendamento_id>', methods=['DELETE'])
+def excluir_agendamento(agendamento_id):
+    return AgendamentoController.excluir_agendamento(agendamento_id)
 app.secret_key = 'chave-desenvolvimento'
 
 if __name__ == '__main__':

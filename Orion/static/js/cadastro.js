@@ -14,6 +14,22 @@ let confirmSenha = document.querySelector('#confirmSenha');
 let labelConfirmSenha = document.querySelector('#labelConfirmSenha');
 let validConfirmSenha = false;
 
+let bairro = document.querySelector('#bairro');          
+let labelBairro = document.querySelector('#labelBairro');
+let validBairro = false;
+
+let rua = document.querySelector('#rua');                
+let labelRua = document.querySelector('#labelRua');
+let validRua = false;
+
+let numero = document.querySelector('#numero');                
+let labelNumero = document.querySelector('#labelNumero');
+let validNumero = false;
+
+let cep = document.querySelector('#cep');                
+let labelCEP = document.querySelector('#labelCEP');
+let validCEP = false;
+
 let msgError = document.querySelector('#msgError');
 let msgSuccess = document.querySelector('#msgSuccess');
 
@@ -77,8 +93,68 @@ confirmSenha.addEventListener('keyup', () => {
   }
 });
 
+// Validação do Bairro
+bairro.addEventListener('keyup', () => {
+  if (bairro.value.length <= 2) {
+    labelBairro.setAttribute('style', 'color: red');
+    labelBairro.innerHTML = 'Bairro *Insira no mínimo 3 caracteres';
+    bairro.setAttribute('style', 'border-color: red');
+    validBairro = false;
+  } else {
+    labelBairro.setAttribute('style', 'color: green');
+    labelBairro.innerHTML = 'Bairro';
+    bairro.setAttribute('style', 'border-color: green');
+    validBairro = true;
+  }
+});
+
+// Validação da Rua
+rua.addEventListener('keyup', () => {
+  if (rua.value.length <= 2) {
+    labelRua.setAttribute('style', 'color: red');
+    labelRua.innerHTML = 'Rua *Insira no mínimo 3 caracteres';
+    rua.setAttribute('style', 'border-color: red');
+    validRua = false;
+  } else {
+    labelRua.setAttribute('style', 'color: green');
+    labelRua.innerHTML = 'Rua';
+    rua.setAttribute('style', 'border-color: green');
+    validRua = true;
+  }
+});
+
+// Validação do Numero
+rua.addEventListener('keyup', () => {
+  if (numero.value.length <= 2) {
+    labelNumero.setAttribute('style', 'color: red');
+    labelNumero.innerHTML = 'Numero *Insira no mínimo 3 caracteres';
+    numero.setAttribute('style', 'border-color: red');
+    validNumero = false;
+  } else {
+    labelNumero.setAttribute('style', 'color: green');
+    labelNumero.innerHTML = 'Numero';
+    numero.setAttribute('style', 'border-color: green');
+    validNumero = true;
+  }
+});
+
+// Validação do CEP
+cep.addEventListener('keyup', () => {
+  if (cep.value.length !== 8 || isNaN(cep.value)) {
+    labelCEP.setAttribute('style', 'color: red');
+    labelCEP.innerHTML = 'CEP *Insira um CEP válido (8 dígitos)';
+    cep.setAttribute('style', 'border-color: red');
+    validCEP = false;
+  } else {
+    labelCEP.setAttribute('style', 'color: green');
+    labelCEP.innerHTML = 'CEP';
+    cep.setAttribute('style', 'border-color: green');
+    validCEP = true;
+  }
+});
+
 async function cadastrar() {
-  if (validNome && validUsuario && validSenha && validConfirmSenha) {
+  if (validNome && validUsuario && validSenha && validConfirmSenha && validBairro && validRua && validCEP) {
     try {
       const response = await fetch('/api/users', {
         method: 'POST',
@@ -88,7 +164,11 @@ async function cadastrar() {
         body: JSON.stringify({
           name: nome.value,
           email: usuario.value,
-          password: senha.value
+          password: senha.value,
+          bairro: bairro.value,  
+          rua: rua.value,    
+          numero: numero.value,    
+          cep: cep.value         
         })
       });
 
