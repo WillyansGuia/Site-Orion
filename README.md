@@ -21,6 +21,7 @@ Antes de começar, certifique-se de ter instalado:
 ### 1. Clone o Repositório
 ```bash
 git clone https://github.com/WillyansGuia/Site-Orion.git
+cd Site-Orion
 cd Orion
 ```
 
@@ -81,14 +82,22 @@ Orion/
 ├── config/
 │   └── database.py       # Configurações do banco de dados
 ├── controllers/
+│   ├── agendamento_controller.py # Controlador de agendamentos
 │   └── user_controller.py # Controlador de usuários
 ├── models/
+│   ├── agendamento.py    # Modelo de agendamento
 │   └── user.py           # Modelo de usuário
 ├── templates/            # Templates HTML
-├── static/              # Arquivos estáticos (CSS, JS, imagens)
-├── migrations/          # Migrações do banco de dados
-├── requirements.txt     # Dependências do projeto
-└── .env                # Variáveis de ambiente
+├── static/               # Arquivos estáticos (CSS, JS, imagens)
+├── tests/                # Testes unitários
+│   ├── test_agendamento_controller_editar.py
+│   ├── test_agendamento_controller_excluir.py
+│   ├── test_agendamento_controller_listar.py
+│   ├── test_agendamento_controller.py
+│   ├── test_user_controller_login.py
+│   └── test_user_controller.py
+├── requirements.txt      # Dependências do projeto
+└── .env                  # Variáveis de ambiente
 ```
 
 ## Rotas da Aplicação
@@ -102,6 +111,40 @@ Orion/
 ## APIs
 - `POST /api/users` - Criar novo usuário
 - `POST /api/login` - Autenticar usuário
+- `POST /api/agendamentos` - Criar novo agendamento
+- `GET /api/agendamentos` - Listar agendamentos do usuário
+- `PUT /api/agendamentos/<int:agendamento_id>` - Editar agendamento
+- `DELETE /api/agendamentos/<int:agendamento_id>` - Excluir agendamento
+
+## Testes Unitários
+
+### Executando os Testes
+Para executar todos os testes, utilize o seguinte comando:
+```bash
+python -m unittest discover tests/
+```
+
+### Testes Disponíveis
+* **Testes de Usuário**
+   * `test_user_controller.py`: Testes para criação de usuário e login.
+   * `test_user_controller_login.py`: Testes específicos para autenticação de usuário.
+* **Testes de Agendamento**
+   * `test_agendamento_controller.py`: Testes para criação de agendamentos.
+   * `test_agendamento_controller_editar.py`: Testes para edição de agendamentos.
+   * `test_agendamento_controller_excluir.py`: Testes para exclusão de agendamentos.
+   * `test_agendamento_controller_listar.py`: Testes para listagem de agendamentos.
+
+### Exemplo de Execução de Testes Específicos
+Para executar um teste específico, utilize o seguinte comando:
+```bash
+python -m unittest tests/test_user_controller.py
+```
+
+### Cobertura de Testes
+Os testes cobrem as principais funcionalidades do sistema, incluindo:
+* Criação e autenticação de usuários.
+* Criação, edição, exclusão e listagem de agendamentos.
+* Verificação de permissões e autenticação.
 
 ## Comandos Úteis
 
@@ -128,5 +171,3 @@ flask db downgrade
 # Acessar MySQL
 mysql -u root -p
 ```
-
-

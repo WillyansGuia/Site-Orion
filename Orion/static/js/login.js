@@ -1,3 +1,4 @@
+// Função para fazer login
 async function entrar() {
     const usuario = document.querySelector('#usuario');
     const senha = document.querySelector('#senha');
@@ -55,8 +56,40 @@ async function entrar() {
     }
 }
 
+// Evento de mostrar/ocultar senha
 let btnMostrarSenha = document.querySelector('#btnMostrarSenha');
 btnMostrarSenha.addEventListener('click', () => {
     let inputSenha = document.querySelector('#senha');
-    inputSenha.type = inputSenha.type === 'password' ? 'text' : 'password';
+    let eyeIcon = btnMostrarSenha.querySelector('i');
+    
+    if (inputSenha.type === 'password') {
+        inputSenha.type = 'text';
+        eyeIcon.classList.remove('fa-eye');
+        eyeIcon.classList.add('fa-eye-slash');
+    } else {
+        inputSenha.type = 'password';
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye');
+    }
+});
+
+// Evento para voltar a senha ao campo perder o foco
+document.querySelector('#senha').addEventListener('blur', () => {
+    let inputSenha = document.querySelector('#senha');
+    let eyeIcon = btnMostrarSenha.querySelector('i');
+    
+    // Se o usuário sair do campo, volta para password
+    if (inputSenha.type === 'text') {
+        inputSenha.type = 'password';
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye');
+    }
+});
+
+// Evento de Enter para fazer login
+document.querySelector('form').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Impede o comportamento padrão do formulário
+        entrar(); // Chama a função de login
+    }
 });

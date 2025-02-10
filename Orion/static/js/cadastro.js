@@ -220,3 +220,31 @@ async function cadastrar() {
     });
   }
 }
+
+let btnMostrarSenha = document.querySelector('#btnMostrarSenha');
+btnMostrarSenha.addEventListener('click', () => {
+    let inputSenha = document.querySelector('#senha');
+    let eyeIcon = btnMostrarSenha.querySelector('i');
+    
+    if (inputSenha.type === 'password') {
+        inputSenha.type = 'text';
+        eyeIcon.classList.remove('fa-eye');
+        eyeIcon.classList.add('fa-eye-slash');
+    } else {
+        inputSenha.type = 'password';
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye');
+    }
+});
+
+
+document.querySelector('#senha').addEventListener('blur', () => {
+    let inputSenha = document.querySelector('#senha');
+    let eyeIcon = btnMostrarSenha.querySelector('i');
+    
+    if (inputSenha.type === 'text') {
+        inputSenha.type = 'password';
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye');
+    }
+});

@@ -54,21 +54,25 @@ class AgendamentoController:
     def editar_agendamento(agendamento_id):
         try:
             data = request.get_json()
-    
+        
+            # Verifica se o usuário está autenticado
+            if 'user_id' not in session:
+                return jsonify({'error': 'Usuário não autenticado'}), 401
+        
             # Busca o agendamento pelo ID
             agendamento = Agendamento.query.get(agendamento_id)
             if not agendamento:
                 return jsonify({'error': 'Agendamento não encontrado'}), 404
-    
+        
             # Verifica se o agendamento pertence ao usuário logado
-            if agendamento.user_id != session['user_id']:
+            if agendamento.user_id != session.get('user_id'):
                 return jsonify({'error': 'Você não tem permissão para editar este agendamento'}), 403
-    
+        
             # Atualiza os dados do agendamento
             agendamento.servico = data['servico']
             agendamento.data = datetime.strptime(data['data'], '%Y-%m-%d').date()
             agendamento.horario = data['horario']
-    
+        
             db.session.commit()
             return jsonify({
                 'message': 'Agendamento atualizado com sucesso',
@@ -81,9 +85,17 @@ class AgendamentoController:
     @staticmethod
     def excluir_agendamento(agendamento_id):
         try:
+            # Verifica se o usuário está autenticado
+            if 'user_id' not in session:
+                return jsonify({'error': 'Usuário não autenticado'}), 401
+
             agendamento = Agendamento.query.get(agendamento_id)
             if not agendamento:
                 return jsonify({'error': 'Agendamento não encontrado'}), 404
+
+            # Verifica se o agendamento pertence ao usuário logado
+            if agendamento.user_id != session['user_id']:
+                return jsonify({'error': 'Você não tem permissão para excluir este agendamento'}), 403
 
             db.session.delete(agendamento)
             db.session.commit()

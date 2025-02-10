@@ -21,8 +21,8 @@
                         <td>${agendamento.data}</td>
                         <td>${agendamento.horario}</td>
                         <td>
-                            <button onclick="abrirModalEditar(${agendamento.id})">Editar</button>
-                            <button onclick="excluirAgendamento(${agendamento.id})">Excluir</button>
+                            <button onclick="abrirModalEditar(${agendamento.id})" class="btn-acao btn-editar">Editar</button>
+                            <button onclick="excluirAgendamento(${agendamento.id})" class="btn-acao btn-editar">Excluir</button>
                         </td>
                     `;
                     tbody.appendChild(row);
@@ -64,17 +64,17 @@
             });
             return;
         }
-
+    
         // Busca o agendamento pelo ID
         const agendamento = data.agendamentos.find(a => a.id === id);
         if (agendamento) {
             agendamentoEditando = agendamento; // Armazena o agendamento que está sendo editado
-
+    
             // Preenche os campos do modal com os dados do agendamento
             document.querySelector('#editar-servico').value = agendamento.servico;
             document.querySelector('#editar-data').value = agendamento.data.split('T')[0]; // Formata a data
             document.querySelector('#editar-horario').value = agendamento.horario;
-
+    
             // Exibe o modal
             document.querySelector('#modal-editar').style.display = 'block';
         } else {

@@ -129,9 +129,12 @@ nav .close-icon{
     color:white;
 }
 
-.banner{
+.banner {
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 50px 20px; /* Adicionado padding horizontal e vertical */
 }
 
 .banner .banner-text{
@@ -575,32 +578,62 @@ nav .close-icon{
     justify-content: space-between;
 }
 
+/* Estilo para campos autopreenchidos */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+    -webkit-text-fill-color: #fff !important;
+    transition: background-color 5000s ease-in-out 0s;
+    background: transparent !important;
+}
+
+/* Para o Firefox */
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active {
+    box-shadow: 0 0 0 30px transparent inset !important;
+    -webkit-text-fill-color: #fff !important;
+    transition: background-color 5000s ease-in-out 0s;
+    background: transparent !important;
+}
+
 /* Página login */
 
 .login-box {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   min-height: 100vh;
-   background: transparent;
-   border: 2px solid rgba(255, 255, 255, .5);
-   position: relative;
-   width: 400px;
-   height: 450px;
-   border-radius: 20px;
-   backdrop-filter: blur(25px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    position: relative;
+    width: 450px; /* Aumentado para acomodar melhor o conteúdo */
+    height: auto; /* Alterado para auto para se ajustar ao conteúdo */
+    border-radius: 20px;
+    backdrop-filter: blur(25px);
+    padding: 30px; /* Adicionado padding para espaçamento interno */
 }
 
-h2 {
+.login-box form {
+    width: 100%;
+    padding: 20px;
+}
+
+/* Ajuste do título */
+.login-box h2 {
     font-size: 2em;
     color: #fff;
     text-align: center;
+    margin-bottom: 30px; /* Adicionado margem inferior */
 }
 
 .input-box {
     position: relative;
-    width: 310px;
-    margin: 30px 0;
+    width: 100%; /* Alterado para 100% */
+    margin: 25px 0; /* Ajustado o espaçamento vertical */
     border-bottom: 2px solid #fff;
 }
 
@@ -639,6 +672,26 @@ h2 {
     line-height: 57px;
 }
 
+.show-password-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #fff; /* Cor branca para o ícone */
+    font-size: 1.2em;
+}
+
+/* Ajuste específico para o ícone do olho */
+.show-password-btn i {
+    color: #fff;
+}
+
+/* Ajuste do padding do input de senha para acomodar os dois ícones */
+.input-box input[type="password"] {
+    padding-right: 70px; /* Espaço suficiente para os dois ícones */
+}
+
 .remember-forgot {
     margin: -15px 0 15px;
     color: #fff;
@@ -660,14 +713,19 @@ h2 {
     text-decoration: underline;
 }
 
-button {
+.login-box button {
     width: 100%;
-    height: 40px;
+    height: 45px;
     background: #4f9cf9;
+    border: none;
+    outline: none;
     border-radius: 40px;
+    cursor: pointer;
     font-size: 1em;
-    font-weight: 500;
     color: #fff;
+    font-weight: 500;
+    margin-top: 20px; /* Adicionado margem superior */
+    margin-bottom: 10px; /* Adicionado margem inferior */
 }
 
 .register-link {
@@ -689,14 +747,13 @@ button {
 
 @media (max-width: 360px) {
     .login-box {
-        width: 100%;
-        height: 100vh;
-        border: none;
-        border-radius: 0;
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
     }
 
     .input-box {
-        width: 290px;
+        width: 100%;
     }
 }
 
@@ -734,7 +791,7 @@ button {
     text-align: left;
   }
   
-  #servicos input[type="date"],
+  /* #servicos input[type="date"],
   #servicos select {
     width: 100%;
     padding: 0.75rem;
@@ -742,7 +799,22 @@ button {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 14px;
-  }
+  } */
+
+  .input-box-agendamento select option {
+    background-color: white; 
+    color: black; 
+    font-size: 14px;
+    padding: 8px;
+}
+
+  .input-box select option {
+    background-color: white; 
+    color: black; 
+    font-size: 14px;
+    padding: 8px;
+}
+  
   
   #servicos button {
     width: 100%;
@@ -759,6 +831,60 @@ button {
   #servicos button:hover {
     background-color: #45a049;
   }
+
+  .input-box-agendamento input[type="date"] {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: white;
+    padding: 0 35px 0 25px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative; 
+}
+
+
+.input-box-agendamento input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+    position: absolute; 
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 20px; 
+    height: 20px; 
+}
+
+.input-box input[type="date"] {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: white;
+    padding: 0 35px 0 25px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative; 
+}
+
+
+.input-box input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+    position: absolute; 
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 20px; 
+    height: 20px; 
+}
   
 
   /* Estilizando o select */
@@ -826,4 +952,213 @@ button {
     font-size: 1.2em;
     line-height: 57px;
     z-index: 1;
+}
+
+.banner h2{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px; /* Adicionado margem inferior */
+
+}
+
+/* Estilo da tabela */
+#tabela-agendamentos {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 25px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Cabeçalho da tabela */
+#tabela-agendamentos thead th {
+    background-color: rgba(79, 156, 249, 0.3);
+    color: white;
+    font-weight: 600;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Células do corpo da tabela */
+#tabela-agendamentos tbody td {
+    padding: 12px 20px;
+    color: white;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* Linhas da tabela */
+#tabela-agendamentos tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito hover nas linhas */
+#tabela-agendamentos tbody tr:hover {
+    background-color: rgba(79, 156, 249, 0.1);
+}
+
+/* Última linha da tabela */
+#tabela-agendamentos tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Botões de ação */
+#tabela-agendamentos .btn-acao {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 0 4px;
+    transition: all 0.3s ease;
+}
+
+/* Botão de editar */
+#tabela-agendamentos .btn-editar {
+    background-color: #4f9cf9;
+    color: white;
+}
+
+#tabela-agendamentos .btn-editar:hover {
+    background-color: #3580db;
+}
+
+/* Botão de excluir */
+#tabela-agendamentos .btn-excluir {
+    background-color: #dc3545;
+    color: white;
+}
+
+#tabela-agendamentos .btn-excluir:hover {
+    background-color: #c82333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #tabela-agendamentos {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    #tabela-agendamentos thead th,
+    #tabela-agendamentos tbody td {
+        padding: 12px 15px;
+    }
+}
+
+/* Estilo do modal de edição */
+/* Estilo do modal de edição */
+#modal-editar {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+    z-index: 1000; /* Garante que o modal fique acima de outros elementos */
+}
+
+#modal-editar .modal-content {
+    background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Borda semi-transparente */
+    border-radius: 20px; /* Bordas arredondadas */
+    backdrop-filter: blur(25px); /* Efeito de desfoque */
+    padding: 30px;
+    width: 450px; /* Largura do modal */
+    max-width: 90%; /* Responsividade */
+    position: absolute; /* Posicionamento absoluto */
+    top: 50%; /* Move o topo do modal para 50% da tela */
+    left: 50%; /* Move a esquerda do modal para 50% da tela */
+    transform: translate(-50%, -50%); /* Centraliza o modal */
+    color: white; /* Cor do texto */
+}
+
+#modal-editar .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+#modal-editar h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#modal-editar .input-box {
+    position: relative;
+    width: 100%;
+    margin: 25px 0;
+    border-bottom: 2px solid white; /* Linha branca abaixo do campo */
+}
+
+#modal-editar .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: white;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+#modal-editar .input-box input:focus ~ label,
+#modal-editar .input-box input:valid ~ label,
+#modal-editar .input-box select:focus ~ label,
+#modal-editar .input-box select:valid ~ label {
+    top: -5px; /* Move o label para cima quando o campo está em foco ou preenchido */
+}
+
+#modal-editar .input-box input,
+#modal-editar .input-box select {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: white;
+    padding: 0 35px 0 5px;
+}
+
+#modal-editar .input-box .icon {
+    position: absolute;
+    right: 8px;
+    color: white;
+    font-size: 1.2em;
+    line-height: 57px;
+}
+
+#modal-editar button {
+    width: 100%;
+    height: 45px;
+    background: #4f9cf9; /* Cor de fundo do botão */
+    border: none;
+    outline: none;
+    border-radius: 40px; /* Bordas arredondadas */
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+#modal-editar button:hover {
+    background-color: #3580db; /* Cor de fundo do botão ao passar o mouse */
 }
