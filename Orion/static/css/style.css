@@ -1162,3 +1162,55 @@ input:autofill:active {
 #modal-editar button:hover {
     background-color: #3580db; /* Cor de fundo do botão ao passar o mouse */
 }
+
+.perfil input-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    position: relative;
+    width: 450px; /* Aumentado para acomodar melhor o conteúdo */
+    height: auto; /* Alterado para auto para se ajustar ao conteúdo */
+    border-radius: 20px;
+    backdrop-filter: blur(25px);
+    padding: 30px; /* Adicionado padding para espaçamento interno */
+}
+ 
+.perfil .login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    position: relative;
+    width: 450px; /* Aumentado para acomodar melhor o conteúdo */
+    height: auto; /* Alterado para auto para se ajustar ao conteúdo */
+    border-radius: 20px;
+    backdrop-filter: blur(25px);
+    padding: 30px; /* Adicionado padding para espaçamento interno */
+}
+
+#form-editar-perfil button {
+    width: 100%;
+    height: 45px;
+    background: #4f9cf9;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 20px; /* Adicionado margem superior */
+    margin-bottom: 10px; /* Adicionado margem inferior */
+}
+
+.input-box-perfil {
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+}
